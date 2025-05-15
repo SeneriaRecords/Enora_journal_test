@@ -1,0 +1,1072 @@
+/* Styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('images/Enora cover 2.0-13 (bruit) copie.jpg');
+  background-size: cover; /* Couvre tout l'écran */
+  background-position: center; /* Centrer l'image */
+  background-attachment: fixed; /* Garder l'image fixe pendant le défilement */
+  font-family: 'Roboto Mono', monospace;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='32' width='32'><text y='25' font-size='28'>🎈</text></svg>") 0 0, auto;
+
+}
+
+
+
+
+.entrance-sentence {
+  display: flex;
+  justify-content: center; /* Centrage horizontal */
+  align-items: center;     /* Centrage vertical */
+  text-align: center;
+
+}
+
+
+@media (max-width: 600px) {
+  .entrance-sentence {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+/* Style de la barre de navigation */
+.navbar {
+  position: fixed; /* Fixe la barre de navigation en haut de l'écran */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* padding: 15px; */
+  z-index: 1000; /* Pour s'assurer que la barre soit toujours au-dessus */
+}
+
+
+header {
+  padding: 20px;
+  text-align: center;
+}
+
+
+.navbar h1 {
+  font-size: 3em;
+  font-family: 'bebas neue pro', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  
+}
+
+nav ul {
+  list-style: none;
+  padding: 10px 0;
+
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 30px;
+}
+
+@media screen and (max-width: 780px){
+nav ul li {
+  margin: 0 8px;
+}
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff; /* Blanc par défaut */
+  font-size: medium;
+  text-transform: uppercase;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 200; /* Léger */
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #ff5c64; /* Rouge néon */
+  text-shadow: 0 0 5px #dd222b, 0 0 10px #dd222b, 0 0 15px #dd222b, 0 0 20px #dd222b; /* Effet néon */
+}
+
+
+.section {
+  padding: 40px 20px;
+  text-align: center;
+  
+}
+
+#newvideos {
+  scroll-margin-top: -90px; /* Ajuste cette valeur en fonction de la hauteur de ta navbar */
+}
+
+
+h1 {
+
+  position: fixed;
+  top: 85px; /* Ajuste selon la hauteur de ta navbar */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out, top 0.5s ease-out; /* Animation pour fade-out et position */
+  
+
+
+  text-decoration: none;
+  color: #fff; /* Blanc par défaut */
+  font-size: medium;
+  text-transform: uppercase;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 200; /* Léger */
+
+}
+
+
+h1.fixed {
+  top: 20px; /* Position du h1 en haut à gauche de la navbar */
+  left: 20px;
+  transform: translateX(0); /* Aligne à gauche */
+  opacity: 0; /* Pour faire fade-out au scroll */
+}
+
+h1.fixed.show {
+  opacity: 1; /* Faire fade-in lors de l’apparition en haut à gauche */
+}
+
+
+.background-title {
+  position: absolute;
+  top: 20%; /* à adapter selon ton design */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none; /* pour ne pas bloquer les clics */
+}
+
+.background-title h1 {
+  font-size: 10vw; /* super grand pour l'effet "fond" */
+  color: rgba(255, 255, 255, 0.05); /* couleur très pâle pour effet watermark */
+  text-transform: uppercase;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+
+
+/* Style de base de ton texte dans le header */
+/* Style de base de ton texte dans le header */
+.watermark h1 {
+  position: fixed;
+  top: 10vh; /* Espace par rapport au haut */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 6vw; /* Taille grande au départ */
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 600; /* Applique l'effet gras */
+  text-transform: uppercase;
+  margin: 0;
+  z-index: -1; /* En dessous de tout */
+  transition: all 0.5s ease; /* Animation douce */
+  opacity: 1; /* Opacité par défaut */
+}
+
+/* Lors du scroll, on applique un style plus petit et on diminue l'opacité */
+.watermark h1.fixed {
+  font-size: large; /* Taille plus petite */
+  top: 11vh; /* Remonter légèrement */
+  opacity: 0.7; /* Réduire l'opacité à 50% */
+  text-decoration: none;
+  filter: blur(2px);
+  
+}
+
+/* Effet de fade-in lors du changement de style */
+.watermark h1.show {
+  transition: opacity 0.5s ease;
+}
+
+
+
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #b41d24;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-family: 'Roboto Mono', monospace;
+
+}
+
+
+h4 {
+font-size: 1.5em;
+margin-bottom: 10px;
+font-family: 'Roboto Mono', monospace;
+word-spacing: -6px; /* Réduit l'espace entre les mots */
+
+
+}
+
+.stories_top_h3 {
+
+  margin-left: 800px; /* Ajuste la marge à gauche */
+  margin-right: 800px; /* Ajuste la marge à droite */  
+  padding: 20px 20px; 
+
+
+}
+
+.pensee_titre {
+
+font-style: normal;
+
+
+}
+
+.pensee_titre2 {
+
+font-size: 14PX;
+
+
+}
+
+.thought-day {
+  padding: 40px; /* Espacement intérieur pour ne pas que le texte touche la bordure */
+  border-radius: 80px; /* Arrondir les coins de l'encadrement */
+  margin-top: 0px; /* Ne touche pas à la marge en haut */
+  margin-bottom: 0px; /* Ne touche pas à la marge en bas */
+  font-family: 'Courier New', Courier, monospace; /* Police à aspect digital */
+  color: #fff;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+  font-weight: bold;
+
+}
+
+
+
+
+.thought-day::before {
+  content: ""; /* Crée un pseudo-élément */
+  position: absolute; /* Le positionne absolument par rapport à l'élément parent */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit; /* Hérite du fond de l'élément parent */
+  z-index: -1; /* Assure que le pseudo-élément est derrière le contenu */
+  filter: blur(10px); /* Applique un flou aux bords */
+  border-radius: 10px; /* Assure que les bords flous suivent la forme arrondie */
+  
+}
+
+
+.thought-day p {
+  margin-bottom: 10px; /* Espacement entre les paragraphes */
+  font-size: 16px; 
+  filter: brightness(80%);
+
+}
+
+
+mark {
+  background-color: #b41d24; /* Rouge fluo */
+  color: #fff; /* Texte en blanc */
+  padding: 0.1em 0.3em; /* Espacement pour que le fond ne touche pas le texte */
+  border-radius: 2px; /* Un léger arrondi des coins */
+}
+
+
+
+
+article {
+  margin-bottom: 40px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* Important pour responsive : retour à la ligne si trop large */
+}
+
+.gallery-item img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 400px; /* facultatif : limite la hauteur sans couper */
+  box-shadow: 0 0 10px #7e6767;
+  display: block;
+  cursor: pointer; /* 👉 Curseur "doigt" uniquement */
+  border-radius: 6px; /* 👈 Courbure des coins */
+
+
+}
+
+.gallery-item2 img {
+  height: auto;
+  width: 200px;
+  max-height: 400px; /* facultatif : limite la hauteur sans couper */
+  box-shadow: 0 0 10px #7e6767;
+  display: block;
+  border-radius: 2px; /* 👈 Courbure des coins */
+
+
+}
+
+
+
+.gallery-item2:hover {
+  transform: scale(1.2); /* zoom léger */
+}
+
+.image-wrapper {
+box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* L'ombre est uniquement sur l'image */
+}
+
+
+
+.gallery-item-cite {
+  display: inline-block;
+  margin: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+
+
+
+.gallery-item-cite:hover {
+  transform: scale(1.2); /* zoom léger */
+}
+
+.gallery-item-cite img {
+  display: block;
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+.gallery-item-cite2 {
+  border-radius: 6px;
+}
+
+.img-positionnee {
+  position: relative;
+  border-radius: 6px;
+
+  left: 50px; /* X */
+  top: 30px;  /* Y */
+  width: 400px;
+  transition: transform 0.2s ease;
+
+}
+
+.img-positionnee:hover {
+  transform: scale(1.2); /* zoom léger */
+  box-shadow: 0 0 20px #e16368; /* accentuation de l'ombre si tu veux */
+}
+.img-positionnee2 {
+  position: relative;
+  border-radius: 6px;
+  margin-top: 40px;
+  margin-left: -200px;
+
+  left: 50px; /* X */
+  top: 30px;  /* Y */
+  width: 400px;
+  transition: transform 0.2s ease;
+
+}
+
+
+.img-positionnee2:hover {
+  transform: scale(1.2); /* zoom léger */
+  box-shadow: 0 0 20px #e16368; /* accentuation de l'ombre si tu veux */
+
+}
+
+
+
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Fond noir en pseudo-élément */
+.lightbox-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Image zoomée */
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 0 30px #e16368(255, 255, 255, 0.2);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  z-index: 1;
+  cursor: pointer; /* idem pendant le zoom pour dézoomer */
+}
+
+/* Lancement animation */
+.lightbox-overlay.show {
+  pointer-events: all;
+}
+
+.lightbox-overlay.show img {
+  transform: scale(1);
+}
+
+/* Fade du fond noir une fois zoom fini */
+.lightbox-overlay.show::after {
+  opacity: 1;
+}
+
+
+
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+
+  flex-wrap: nowrap;
+  overflow-x: scroll;}
+
+
+/* Charger une animation de loader */
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 8px solid rgba(183, 118, 118, 0.7); /* Gris clair */
+  border-top: 8px solid hsla(357, 93%, 45%, 0.5); 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Animation de rotation pour le loader */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.carousel-track.hidden {      /* ← track masqué avant 2 s */
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 2. le track redevient visible quand on enlève .hidden */
+.carousel-track {
+  display: flex;
+  transition: transform .5s ease, opacity .5s ease;
+  gap: 40px;
+  padding: 50px 0;
+  opacity: 1;                /* visible par défaut, mais caché si .hidden */
+}
+
+
+
+
+.carousel-item{
+  flex: 0 0 calc(33.333% - 40px); /* 3 cartes par vue − le 40 px compense le gap */
+  aspect-ratio: 9/16;
+  height: 530px;                  /* ↑ taille (480 px → 520 px) */
+}
+
+
+/* Quand les vidéos sont chargées, elles deviennent visibles */
+.carousel-item.loaded {
+  opacity: 1;
+}
+
+
+
+.carousel-video {
+  width: 100%;
+  height: 99%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgb(0, 0, 0);
+  transition: filter 0.3s ease;
+  filter: blur(10px); /* Appliquer un flou par défaut */
+  
+}
+
+
+/* Quand la vidéo est en lecture, enlever le flou */
+.carousel-video.playing {
+  filter: none; /* Enlève le flou dès que la vidéo commence à jouer */
+  box-shadow: 0 0 20px 6px #00000068;
+  transition:box-shadow .92s ease;
+
+
+
+}
+
+
+
+/* Lorsque la souris est au-dessus de la vidéo, changer le curseur en bouton play */
+.carousel-video:hover {
+  cursor: url('images/boutton_play1.png') 16 16, zoom-in; /* On ajuste les coordonnées si besoin */
+}
+
+
+/* Lorsque la vidéo est en lecture, changer le curseur en bouton pause */
+.carousel-video.playing {
+  cursor: url('images/boutton_pause1.png') 16 16, pointer; /* On ajuste les coordonnées si besoin */
+}
+
+
+
+
+/* Style pour la classe img-carou-bts */
+.img-carou-bts {
+  flex: 0 0 calc(33.333% - 40px); /* Comme les vidéos, 3 images par vue */
+  aspect-ratio: 9 / 16;           /* Pour garder un aspect 9:16 */
+  height: 520px;                  /* Taille uniforme avec les vidéos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: filter 0.3s ease;
+}
+
+.img-carou-bts .carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgb(0, 0, 0);
+  filter: blur(10px); /* Flou par défaut sur l'image */
+  transition: filter 0.3s ease, box-shadow 0.3s ease; /* Transition pour le flou et l'ombre */
+}
+
+/* Effet au survol de l'image (comme les vidéos) */
+.img-carou-bts:hover .carousel-image {
+  
+  filter: none; /* Enlève le flou dès que la vidéo commence à jouer */
+  box-shadow: 0 0 20px 6px #00000068;
+  
+
+
+}
+
+/* Les captions restent comme dans les autres éléments du carousel */
+.img-carou-bts .caption {
+  position: absolute;
+  bottom: -60px;
+  left: 15px;
+  color: white;
+  font-size: 15px;
+}
+
+
+
+
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #ff343e8f;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.nav.prev {
+  left: 20px;
+}
+
+.nav.next {
+  right: 20px;
+}
+
+
+  
+
+.caption2 {
+  display:block;
+  margin-top:8px;
+  text-align:center;
+  font-size:0.8rem;
+  font-style: italic;
+  font-family:'Roboto Mono', monospace;
+  color:#fff;
+  opacity:0.8;
+
+}
+
+
+
+
+
+/*audio play*/
+
+/* Audio player container */
+
+
+
+
+@media screen and (max-width: 400px){
+  .social-section {
+margin-top: 290px;  
+  }
+  }
+  
+
+
+  
+
+
+/* Fade-in / fade-out effect */
+@keyframes fadeIn {
+from {
+  opacity: 0;
+  transform: translateY(-40px);
+}
+to {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+}
+
+
+.audio-player-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 3rem;
+  gap: 2rem;
+  height: 165px;
+
+}
+
+
+@media screen and (max-width: 400px){
+  .audio-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
+.audio-player {
+display: flex;
+flex-direction: column;
+align-items: start;
+background-color: #070000;
+border-radius: 12px;
+padding: 17px;
+color: #fff;
+max-width: 380px;
+box-shadow: 0 10px 10px rgba(0, 0, 0, 0.469);
+}
+
+
+
+
+
+@media (max-width: 600px) {
+  .audio-player {
+    width: 340px;
+    padding: 32px;
+
+  }
+}
+
+
+/* Animation slide-up + fade-in */
+@keyframes slideUpFadeIn {
+0% {
+  opacity: 0;
+  transform: translateY(50px); /* Démarre en bas de l'écran */
+}
+100% {
+  opacity: 1;
+  transform: translateY(0); /* Fin à la position initiale */
+}
+}
+
+/* Application de l'animation à .audio-player */
+.audio-player {
+opacity: 0;
+transform: translateY(50px); /* Position initiale en bas */
+animation: slideUpFadeIn 1s ease-out forwards; /* Animation de 1 seconde */
+transition: all 0.3s ease; /* Transition générale pour les autres effets */
+}
+
+
+.audio-info {
+width: 100%;
+display: flex;
+align-items: flex-start; /* Alignement en haut */
+gap: 20px; /* Espace entre l'image et le texte */
+}
+
+.audio-controls {
+width: 100%;
+}
+
+.audio-text-controls {
+display: flex;
+width: 100%;
+justify-content: space-between;  /* Centre le contenu horizontalement */
+align-items: center;      /* Centre le contenu verticalement */
+gap: 15px;                /* Espace entre l'icône et la barre de volume */
+
+}
+
+.audio-text {
+display: flex;
+flex-direction: column;
+align-items: flex-start; /* Aligne le texte à gauche */
+justify-content: center;
+font-family: 'Roboto Mono', monospace;
+
+}
+
+
+
+.audio-cover img {
+width: 80px;
+height: 80px;
+object-fit: cover;
+border-radius: 8px;
+}
+
+
+.audio-text .audio-title {
+font-family: 'Roboto Mono', monospace;
+font-size: 18px;
+margin: 0;
+font-weight: bold;
+}
+
+
+
+@media (max-width: 600px) {
+  .audio-text .audio-title {
+    font-size: 12px;
+    letter-spacing: 1px;
+    
+  }
+}
+
+.audio-text .audio-artist {
+font-size: 14px;
+margin: 0;
+color: #b3b3b3;
+}
+
+.audio-text .type-projet-musique {
+font-size: 12px;
+margin: 0;
+color: #b3b3b3;
+}
+
+audio {
+width: 100%;
+outline: none;
+border-radius: 6px;
+}
+
+
+.audio-artist a {
+color: #b3b3b3;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.audio-artist a:hover {
+color: #1DB954; /* Vert Spotify */
+}
+
+
+
+
+
+.play-pause-btn {
+background-color: #d5020d;
+color: white;
+border: none;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+cursor: pointer;
+transition: transform 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover : agrandit légèrement + éclaircit */
+.play-pause-btn:hover {
+background-color: #da2225; /* Plus clair que #dd222b */
+transform: scale(1.08);
+box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Clic maintenu : réduit + assombri */
+.play-pause-btn:active {
+background-color: #a8181e; /* Plus sombre */
+transform: scale(0.94);
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.play-pause-btn svg {
+width: 40px;           /* Taille plus grande */
+height: 40px;
+transition: transform 0.1s ease;
+pointer-events: none;  /* Évite d'intercepter les clics */
+}
+
+
+
+
+
+.progress-bar-container {
+margin-bottom: 8px; /* Ajoute de l'espace entre la barre de progression et les durées */
+display: none;
+width: 100%;
+position: absolute;
+animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.progress-bar {
+margin: 16% 20% 0 auto; /* Centré horizontalement avec un margin-top */
+width: 100%;             /* Ajuste à la largeur du conteneur */
+max-width: 300px;        /* Facultatif : limite la taille max */
+height: 5px;
+background: #2f0000;
+border-radius: 30px;
+appearance: none;
+outline: none;
+display: block;          /* Nécessaire pour que margin auto fonctionne */
+box-shadow: 0 1px 3px #140000;
+
+}
+
+
+
+.progress-bar::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 12px;
+height: 17px;
+background: #ffffff;
+border-radius: 50%;
+border: 2px solid #ccc; /* Ajout du contour gris clair */
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+}
+
+/*Le bouton de lecture rond avec un triangle*/
+.play-button {
+width: 50px;
+height: 50px;
+background-color: #1DB954;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 20px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+margin-left: auto;
+}
+
+.play-button:hover {
+background-color: #1ed760;
+}
+
+/*Le player fixe qui slide depuis le bas (type Spotify)*/
+
+.fixed-audio-bar {
+position: fixed;
+bottom: -120px; /* caché au départ */
+left: 0;
+width: 100%;
+background-color: #181818;
+color: white;
+padding: 20px;
+box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
+transition: bottom 0.4s ease;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 1000;
+}
+
+.fixed-audio-bar.active {
+bottom: 0;
+}
+
+.fixed-audio-bar .controls {
+display: flex;
+gap: 15px;
+align-items: center;
+}
+
+.fixed-audio-bar .btn {
+background: none;
+border: none;
+color: white;
+font-size: 18px;
+cursor: pointer;
+}
+
+.fixed-audio-bar audio {
+width: 200px;
+}
+
+
+
+
+
+/* Optionnel : change la couleur de la durée actuelle */
+#currentTime {
+color: #dd222b61;
+}
+
+
+/* Optionnel : change la couleur de la durée actuelle */
+#currentTime2 {
+  color: #22dd2561;
+  }
+
+
+
+/* Optionnel : change la couleur de la durée actuelle */
+#currentTime3 {
+  color: #d205ddb4;
+  }
+
+
+
+.time-display {
+font-family: 'Roboto Mono', monospace;
+font-size: 14px;
+color: #cabebeb4;
+}
+
+
+
+
+.separator {
+color: #9f9f9f8a; /* Change la couleur de la barre séparatrice */
+}
+
+
+
+.social-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.social-section h2 {
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+
+
+footer {
+  position: fixed; /* Fixe le footer au bas de l'écran */
+  bottom: 0; /* Aligne le footer tout en bas */
+  left: 0; /* Positionne le footer à gauche */
+  width: 100%; /* Prend toute la largeur de la page */
+  color: white; /* Texte en blanc */
+  text-align: center; /* Centre le texte */
+  padding: 10px 0; /* Espacement vertical */
+  font-size: 1em; /* Taille de la police */
+  z-index: -1; /* Assure que le footer soit au-dessus du contenu */
+  margin-bottom: 20px;
+}
+
+
+footer p {
+  color: #fff;
+  font-size: 13.5px;
+
+  
+}
+
+
+
